@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <link rel="stylesheet" href="{% static "css/my_style.css"  %}">
+</head>
+<body>
+    {% if list_with_users %}
+        <ol>
+        {% for x in list_with_users %}
+            <li>User Info:</li>
+            <ul>
+                <li>First Name: {{ x.first_name }}</li>
+                <li>Second Name: {{ x.second_name }}</li>
+                <li>Email: {{ x.email }}</li>
+            </ul>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>NO LIST WITH USERS!</p>
+    {% endif %}
+</body>
+</html>
